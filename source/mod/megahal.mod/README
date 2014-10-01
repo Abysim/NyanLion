@@ -1,0 +1,31 @@
+MegaHAL AI interface for Eggdrop by Steve Huston
+
+Please note, not only do I know little of licensing stuff, but I at this point
+don't care to write it either, so here's my stab at it: If this blows up your
+machine, complain to /dev/null.  If it works well and you like it, drop me a
+line at huston@elvis.rowan.edu, and if you have ideas to clean it up and such,
+feel free, I'd appreciate a copy of the code so I can see what was done.
+
+I hacked this together in a 24 hour period because I thought MegaHAL was cool,
+and it would be neat to have an Eggie "chat" with the users in channel.  As it
+stands, here's what must be edited:
+
+In the commands sections, you must edit the command to match the bot's name.
+Perhaps in a later version I'll fix this, but at the time I wrote it I didn't
+see a way to have it recognize its nick "on the fly".  Simple fix: sed
+'s/KupaKawfe/<YourBotsNickname>/g' megahal.c > newmegahal.c.
+
+You also have to take the megahal.??? files and move them to the root of
+Eggdrop's running location.  Once this is done, either add "loadmodule
+megahal" to your config file, or ".loadmod megahal" in DCC, and *viola*, your
+bot is artificially intelligent :>
+
+If you use this, drop me a line too, so I get an idea of how many people try
+it and like it.
+
+And lastly, the original source code and information can be found at the
+author's site, http://ciips.ee.uwa.edu.au/~hutch
+
+Steve Huston
+huston@elvis.rowan.edu
+
